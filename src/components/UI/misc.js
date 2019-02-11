@@ -8,7 +8,7 @@ export const Tag =(props) =>{
 
     if(props.link){
         return (
-            <Link to="props.linkTo">
+            <Link to={props.linkTo}>
                 {template}
             </Link>
         )

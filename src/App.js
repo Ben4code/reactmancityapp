@@ -11,6 +11,8 @@ class App extends Component {
         <Layout>
           <Switch>
             <Route exact path="/" component={Home}/>
+            {/* <Route exact path="/team" component={Home}/>
+            <Route exact path="/matches" component={Home}/> */}
           </Switch>
         </Layout>
       </BrowserRouter>
