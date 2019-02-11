@@ -1,11 +1,24 @@
 import React, { Component } from 'react'
 import Stripes from '../../../Resources/images/stripes.png'
 import { Tag } from '../../UI/misc'
+import Reveal from 'react-reveal/Reveal'
+import Cards from './Cards'
 
 
 export default class Index extends Component {
+
+    state ={
+        show: false
+    }
+
+
     render() {
         return (
+            <Reveal onReveal={()=>{
+                this.setState({show: true})
+            }}
+            fraction={0.7}
+            >
             <div className="home_meetplayers"
                 style={{
                     background: `#fff url(${Stripes})`
@@ -13,7 +26,7 @@ export default class Index extends Component {
                 <div className="container">
                     <div className="home_meetplayers_wrapper">
                         <div className="home_card_wrapper">
-                            card
+                            <Cards show={this.state.show}/>
                 </div>
                         <div className="home_text_wrapper">
                             <div>
@@ -38,6 +51,7 @@ export default class Index extends Component {
                     </div>
                 </div>
             </div>
+            </Reveal>
         )
     }
 }

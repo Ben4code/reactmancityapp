@@ -1,7 +1,7 @@
 import React from 'react'
 
 export default function Matches_Block({ match }) {
-  console.log(match)
+  
   return (
     <div className="match_block">
       <div className="match_date">
