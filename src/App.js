@@ -7,27 +7,23 @@ import SignIn from './components/SignIn/Index'
 import Dashboard from './components/Dashboard/Index'
 import PrivateRoute from './components/AuthRoutes/PrivateRoutes';
 import PublicRoutes from './components/AuthRoutes/PublicRoutes';
-
+import AdminMatches from './components/Dashboard/Matches/Index'
 
 
 class App extends Component {
   
   
   render() {
-    console.log(this.props);
+    //console.log(this.props);
     return (
       <BrowserRouter>
-        <Layout>
+        <Layout user={this.props}>
           <Switch>
+          <PrivateRoute exact {...this.props} path= '/admin_matches' component={AdminMatches}/>
             <PrivateRoute exact {...this.props} path= '/dashboard' component={Dashboard}/>
+            
             <PublicRoutes restricted={false}  {...this.props} exact path="/" component={Home}/>
             <PublicRoutes restricted={true} {...this.props} exact path="/sign_in" component={SignIn}/>
-
-            {/* <Route exact path="/sign_in" component={SignIn}/>
-            <Route exact path="/" component={Home}/>
-            <Route exact path="/dashboard" component={Dashboard}/> */}
-
-            
           </Switch>
         </Layout>
       </BrowserRouter>

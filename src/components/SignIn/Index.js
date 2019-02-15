@@ -65,7 +65,7 @@ export default class Index extends Component {
                     formError: true
                 })
             })
-            console.log(dataToSubmit);
+            //console.log(dataToSubmit);
 
         } else {
             this.setState({

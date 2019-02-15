@@ -20,6 +20,11 @@ export default class Blocks extends Component {
                 })
             })
     }
+    componentWillUnmount(){
+        this.setState({
+            matches: ''
+        })
+    }
 
     showMatches = (matches) => {
         if (matches) {
